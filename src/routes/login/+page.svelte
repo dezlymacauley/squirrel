@@ -1,15 +1,22 @@
 <script lang="ts">
   import logo from "#lib/assets/logo.svg";
+    import { login } from "#lib/auth.remote.ts";
 </script>
 
 <div class="splash">
-  <form>
+  <form {...login}>
     <img alt="Squirrel logo" src={logo} />
     <label>
       Sign in
-      <input />
+
+      {#each login.fields.handle.issues() as issue }
+        <p role="alert">{issue.message}</p> 
+      {/each}
+
+
+      <input class="rounded" {...login.fields.handle.as("text")} />
     </label>
-    <button>Log in to Squirrel</button>
+    <button class="primary rounded">Log in to Squirrel</button>
   </form>
 </div>
 
@@ -32,7 +39,20 @@
 
   input {
     display: block;
-    width: 100%;
     margin: 0.5rem 0;
+
+    &[aria-invalid="true"]:not(:focus) {
+      outline: 2px solid red;
+    }
   }
+
+  button {
+    display: block;
+    width: 100%;
+  }
+
+  [role="alert"] {
+    color: red;
+  }
+
 </style>

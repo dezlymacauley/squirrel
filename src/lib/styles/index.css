@@ -32,8 +32,19 @@ button {
   justify-content: center;
   gap: 0.5rem;
   border: none;
+  padding: 0.5rem 1rem;
 }
 
 button {
   cursor: pointer;
+}
+
+.rounded {
+  border-radius: 9999px;
+  corner-shape: squircle;
+}
+
+.primary {
+  background-color: var(--accent);
+  color: var(--bg);
 }
