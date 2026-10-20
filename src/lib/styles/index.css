@@ -1,6 +1,8 @@
 /*
-  Every element should have `position relative` 
+  Custom fonts
 */
+
+@import "@fontsource/pangolin";
 
 * {
   position: relative;
@@ -17,6 +19,7 @@
 
 body {
   color: var(--fg);
+  font-family: "Pangolin", cursive;
 }
 
 input,
