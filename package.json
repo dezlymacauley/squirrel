@@ -16,7 +16,10 @@
 		"db:push": "drizzle-kit push",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
-		"db:studio": "drizzle-kit studio"
+		"db:studio": "drizzle-kit studio",
+		"format": "bun fmt",
+		"clean": "rm -rf .svelte-kit node_modules",
+		"setup": "bun run clean && bun install && bun run build"
 	},
 	"devDependencies": {
 		"@libsql/client": "^0.17.3",
